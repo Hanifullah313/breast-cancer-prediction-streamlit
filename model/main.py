@@ -8,7 +8,9 @@ import pickle
 
 
 def clean_data():
-    data = pd.read_csv('C:\\Users\\Hanif ullah laptop\\Desktop\\Breast Cancer Prediction Project\\data\\data.csv')
+    #data = pd.read_csv('C:\\Users\\Hanif ullah laptop\\Desktop\\Breast Cancer Prediction Project\\data\\data.csv')
+    data = pd.read_csv("data/data.csv")
+
     # DROP  UNNECESSARY COLUMNS
     data = data.drop(columns=['Unnamed: 32', 'id'])
     # diagnosis column encode
