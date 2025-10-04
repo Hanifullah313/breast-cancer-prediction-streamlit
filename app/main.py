@@ -99,7 +99,7 @@ def get_radar_chart(input_values):
 
     return fig
 def clean_data():
-     data = pd.read_csv("data/data.csv") # DROP  UNNECESSARY COLUMNS
+    data = pd.read_csv("data/data.csv")
     data = data.drop(columns=['Unnamed: 32', 'id'])
     # diagnosis column encode
     data["diagnosis"] = data["diagnosis"].map({'M': 1, 'B': 0})
