@@ -25,8 +25,17 @@ def add_prediction(input_values):
         st.success("The model predicts that this is a Benign tumor (Non-Cancerous).")
 
     st.subheader("Prediction Probability")
+
+    # Convert model probabilities into DataFrame
     proba_df = pd.DataFrame(prediction_proba, columns=['Benign', 'Malignant'])
-    st.bar_chart(proba_df.T)
+
+    # Transpose so classes are rows, not columns
+    proba_df = proba_df.T
+    proba_df.columns = ["Probability"]
+
+    # Display as a bar chart
+    st.bar_chart(proba_df)
+
     st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
 
 def get_scaled_values(input_values):
